@@ -32,3 +32,18 @@ public class Point {
         return "("+x+";"+y+")";
     }
 }
+
+/* Point contient :
+x : int
+y : int
+
+Point()
+Point(a, b)
+
+getX
+getY
+setX
+setY
+
+toString
+ */
