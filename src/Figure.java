@@ -27,6 +27,8 @@ abstract class Figure {
         return couleur;
     }
 
+
+    @Override
     public String toString(){
         return "L'origine de cette est figure est : "+ origine +
                 "Elle est de couleur" + couleur;

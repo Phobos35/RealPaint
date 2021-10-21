@@ -27,12 +27,13 @@ public class Rectangle extends Figure {
         length = l;
     }
 
+    @Override
     public void setBoundingBox (int heightBB, int widthBB){
         width = widthBB;
         length = heightBB;
     }
 
-
+    @Override
     public void draw (Graphics g){
 
     }
@@ -46,6 +47,7 @@ public class Rectangle extends Figure {
     }
 
 
+    @Override
     public String toString(){
         return "Ce rectangle a une largeur de " + width+ "et une largeur de "+ length;
     }

@@ -39,3 +39,5 @@ public class WindowTest extends JFrame {
         WindowTest win = new WindowTest("Paint is black", 800, 600);
     }
 }
+
+

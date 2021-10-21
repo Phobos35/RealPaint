@@ -28,11 +28,12 @@ public class Ellipse extends Figure{
         this.semiAxysY = semiAxysY;
     }
 
+    @Override
     public void setBoundingBox (int heightBB, int widthBB){
 
     }
 
-
+    @Override
     public void draw (Graphics g){
 
     }
@@ -45,6 +46,7 @@ public class Ellipse extends Figure{
         return Math.PI*semiAxysY*semiAxysX;
     }
 
+    @Override
     public String toString(){
         return "Cette Ellipse a pour demi-axe selon x "+ semiAxysX +"et pour semi-axe selon y"+ semiAxysY;
     }

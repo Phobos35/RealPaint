@@ -7,7 +7,7 @@ public class Circle extends Ellipse {
         super(rayon, rayon, c);
     }
 
-
+    @Override
     public void setBoundingBox(int heightBB, int widthBB){
 
     }
@@ -22,6 +22,7 @@ public class Circle extends Ellipse {
         semiAxysX = y;
     }
 
+    @Override
     public String toString(){
         return "Ce cercle est de rayon "+ semiAxysX +"et est de couleur" + couleur;
     }

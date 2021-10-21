@@ -28,6 +28,7 @@ public class Point {
         y=a;
     }
 
+    @Override
     public String toString(){
         return "("+x+";"+y+")";
     }
