@@ -19,6 +19,8 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
         listFigures = new ArrayList<Figure>();
     }
 
+    public void addFigure(Figure f) { listFigures.add(f);}
+
 
     public void setCouleurActuelle(Color c){
         couleurActuelle = c;
@@ -28,8 +30,14 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
         nomFigureActuelle = f;
     }
 ////?????
-    public void paintComponent(){} // ?????
-////?????
+@Override
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
+        for(Figure f : listFigures){
+            f.draw(g);
+        }
+        //listFigures.get(0).draw(g);
+}
 
 
 // Méthodes abstraites de MouseListener
@@ -63,6 +71,7 @@ figureActuelle : Figure
 
 Drawing
 
+addFigure
 setcouleurActuelle
 setNomFigureActuelle
  */

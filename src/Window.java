@@ -140,9 +140,19 @@ public class Window extends JFrame implements ActionListener{
 
         this.setVisible(true);
 
+        // création de mon Dessin (fenêtre de dessin) et ajout au nord de mon application
+        //this.add(myDraw);
 
+        /*JPanel total = new JPanel();
+        total.setLayout(new GridLayout(2,1));
+        total.add(myDraw);
+        total.add(southPanel);
+        contentPanel.add(southPanel, "South");
+        contentPanel.add(myDraw, "North");
 
+        this.setVisible(true);*/
 
+        // problème car la barre de menu n'est plus active...
     }
 
 
@@ -201,18 +211,22 @@ public class Window extends JFrame implements ActionListener{
             case "paintPackage.Ellipse" :
                 System.out.println("figure ellipse");
                 myDraw.setNomFigureActuelle("Ellipse");
+                myDraw.addFigure(new Ellipse(0,0,myDraw.couleurActuelle));
                 break;
             case "paintPackage.Rectangle" :
                 System.out.println("figure rectangle");
                 myDraw.setNomFigureActuelle("Rectangle");
+                myDraw.addFigure(new Rectangle(0,0,myDraw.couleurActuelle));
                 break;
             case "paintPackage.Cercle" :
                 System.out.println("figure cercle");
                 myDraw.setNomFigureActuelle("Cercle");
+                myDraw.addFigure(new Circle(0,0,myDraw.couleurActuelle));
                 break;
             case "paintPackage.Carré" :
                 System.out.println("figure carré");
                 myDraw.setNomFigureActuelle("Carré");
+                myDraw.addFigure(new Square(0,0,myDraw.couleurActuelle));
                 break;
 
 

@@ -3,8 +3,8 @@ import java.awt.*;
 
 public class Square extends Rectangle {
 
-    public Square(int cote, Color c){
-        super(cote, cote, c);
+    public Square(int px,int py, Color c){
+        super(px, py, c);
     }
 
     @Override

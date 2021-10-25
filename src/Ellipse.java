@@ -30,12 +30,14 @@ public class Ellipse extends Figure{
 
     @Override
     public void setBoundingBox (int heightBB, int widthBB){
-
+        semiAxysX = widthBB/2;
+        semiAxysY = heightBB/2;
     }
 
     @Override
     public void draw (Graphics g){
-
+        g.setColor(couleur);
+        g.fillOval(origine.getX(), origine.getY(), 2*semiAxysX, 2*semiAxysY );
     }
 
     public double getPerimeter(){

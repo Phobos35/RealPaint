@@ -3,8 +3,8 @@ import java.awt.*;
 public class Circle extends Ellipse {
 
 
-    public Circle(int rayon, Color c){
-        super(rayon, rayon, c);
+    public Circle(int px,int py, Color c){
+        super(px,py, c);
     }
 
     @Override

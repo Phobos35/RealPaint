@@ -35,7 +35,8 @@ public class Rectangle extends Figure {
 
     @Override
     public void draw (Graphics g){
-
+        g.setColor(couleur);
+        g.fillRect(origine.getX(), origine.getY(), width, length);
     }
 
     public int getPerimeter(){
