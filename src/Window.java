@@ -142,6 +142,7 @@ public class Window extends JFrame implements ActionListener{
 
         // création de mon Dessin (fenêtre de dessin) et ajout au nord de mon application
         //this.add(myDraw);
+        //myDraw.addAncestorListener();     ????
 
         /*JPanel total = new JPanel();
         total.setLayout(new GridLayout(2,1));
