@@ -12,7 +12,7 @@ public class Window extends JFrame implements ActionListener{
         super(Title);
         this.setSize(x, y);
         this.setVisible(true);
-        //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // création du lieu de stockage des éléments de la fenêtre
         Container contentPanel = this.getContentPane();
