@@ -13,12 +13,6 @@ abstract class Figure {
         this.couleur = couleur;
     }
 
-    /*public Figure(){
-        origine = new Point();
-        couleur = new Color();
-    }
-    */
-
     public Point getOrigine(){
         return origine;
     }
@@ -27,6 +21,10 @@ abstract class Figure {
         return couleur;
     }
 
+    public void setOrigine(int x, int y) {
+        origine.setX(x);
+        origine.setY(y);
+    }
 
     @Override
     public String toString(){
@@ -34,3 +32,19 @@ abstract class Figure {
                 "Elle est de couleur" + couleur;
     }
 }
+
+/* Figure contient :
+origine : Point
+couleur : Color
+
+setBoundingBox
+draw
+
+Figure(Point, Color)
+
+getOrigine
+getColor
+setOrigine
+
+toString
+ */

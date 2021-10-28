@@ -38,8 +38,8 @@ public class Point {
 x : int
 y : int
 
+Point(int, int)
 Point()
-Point(a, b)
 
 getX
 getY

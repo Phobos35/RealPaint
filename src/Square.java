@@ -9,7 +9,7 @@ public class Square extends Rectangle {
 
     @Override
     public void setBoundingBox(int heightBB, int widthBB){
-        length = Math.min(heightBB, widthBB);
+        length = Math.max(heightBB, widthBB);
         width = length;
     }
 
@@ -32,7 +32,7 @@ public class Square extends Rectangle {
 
 /* Square contient :
 
-Square()
+Square(px, py, Color)
 
 setBoundingBox
 setLength

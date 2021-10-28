@@ -5,11 +5,13 @@ public class Circle extends Ellipse {
 
     public Circle(int px,int py, Color c){
         super(px,py, c);
+        System.out.println("cercle créé");
     }
 
     @Override
     public void setBoundingBox(int heightBB, int widthBB){
-
+        semiAxysX = Math.max(heightBB,widthBB)/2;
+        semiAxysY = semiAxysX;
     }
 
     public void setSemiAxysX(int x){
@@ -32,7 +34,7 @@ public class Circle extends Ellipse {
 
 /* Circle contient :
 
-Circle()
+Circle(px, py, Color)
 
 setBoundingBox
 setSemiAxysX

@@ -40,13 +40,15 @@ public class Ellipse extends Figure{
         g.fillOval(origine.getX(), origine.getY(), 2*semiAxysX, 2*semiAxysY );
     }
 
+
+    // Inutile pour le paint :
     public double getPerimeter(){
         return 2*Math.PI*Math.sqrt((semiAxysX^2 + semiAxysY^2)/2);
     }
-
     public double getSurface(){
         return Math.PI*semiAxysY*semiAxysX;
     }
+
 
     @Override
     public String toString(){
@@ -62,17 +64,16 @@ semiAxysY : int
 
 Ellipse(px, py, color)
 
+getsemiAxysX
+getsemiAxysY
+setsemiAxysX
+setsemiAxysY
+
 setBoundingBox
 draw
 
 getPerimeter
 getSurface
 
-getsemiAxysX
-getsemiAxysY
-setsemiAxysX
-setsemiAxysY
-
 toString
-
  */

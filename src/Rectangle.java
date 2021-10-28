@@ -39,10 +39,11 @@ public class Rectangle extends Figure {
         g.fillRect(origine.getX(), origine.getY(), width, length);
     }
 
+
+    // Inutile pour le paint
     public int getPerimeter(){
         return 2*(width + length);
     }
-
     public int getSurface(){
         return width*length;
     }
@@ -62,16 +63,16 @@ length : int
 
 Rectangle(px, py, color)
 
+getWidth
+getLenght
+setWidth
+setLength
+
 setBoundingBox
 draw
 
 getPerimeter
 getSurface
-
-getWidth
-getLenght
-setWidth
-setLength
 
 toString
 

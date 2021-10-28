@@ -71,16 +71,16 @@ public class Window extends JFrame implements ActionListener{
         //this.setVisible(true);
 
         // création des Boutons de Figures et on les rend cliquable
-        JButton Ellipse = new JButton("paintPackage.Ellipse");
+        JButton Ellipse = new JButton("Ellipse");
         Ellipse.addActionListener(this);
         contentPanel.add(Ellipse);
-        JButton Cercle = new JButton("paintPackage.Cercle");
+        JButton Cercle = new JButton("Cercle");
         Cercle.addActionListener(this);
         contentPanel.add(Cercle);
-        JButton Rectangle = new JButton("paintPackage.Rectangle");
+        JButton Rectangle = new JButton("Rectangle");
         Rectangle.addActionListener(this);
         contentPanel.add(Rectangle);
-        JButton Carre = new JButton("paintPackage.Carré");
+        JButton Carre = new JButton("Carré");
         Carre.addActionListener(this);
         contentPanel.add(Carre);
 
@@ -138,22 +138,13 @@ public class Window extends JFrame implements ActionListener{
         // On ajoute la barre de menu
         setJMenuBar(menuBar);
 
+        // ajout du dessin au centre de mon application
+        contentPanel.add(myDraw, "Center");
+        //myDraw.addActionListener(this);
+
+
         this.setVisible(true);
 
-        // création de mon Dessin (fenêtre de dessin) et ajout au nord de mon application
-        //this.add(myDraw);
-        //myDraw.addAncestorListener();     ????
-
-        /*JPanel total = new JPanel();
-        total.setLayout(new GridLayout(2,1));
-        total.add(myDraw);
-        total.add(southPanel);
-        contentPanel.add(southPanel, "South");
-        contentPanel.add(myDraw, "North");
-
-        this.setVisible(true);*/
-
-        // problème car la barre de menu n'est plus active...
     }
 
 
@@ -209,25 +200,21 @@ public class Window extends JFrame implements ActionListener{
 
 
 
-            case "paintPackage.Ellipse" :
+            case "Ellipse" :
                 System.out.println("figure ellipse");
                 myDraw.setNomFigureActuelle("Ellipse");
-                myDraw.addFigure(new Ellipse(0,0,myDraw.couleurActuelle));
                 break;
-            case "paintPackage.Rectangle" :
+            case "Rectangle" :
                 System.out.println("figure rectangle");
                 myDraw.setNomFigureActuelle("Rectangle");
-                myDraw.addFigure(new Rectangle(0,0,myDraw.couleurActuelle));
                 break;
-            case "paintPackage.Cercle" :
+            case "Cercle" :
                 System.out.println("figure cercle");
                 myDraw.setNomFigureActuelle("Cercle");
-                myDraw.addFigure(new Circle(0,0,myDraw.couleurActuelle));
                 break;
-            case "paintPackage.Carré" :
+            case "Carré" :
                 System.out.println("figure carré");
                 myDraw.setNomFigureActuelle("Carré");
-                myDraw.addFigure(new Square(0,0,myDraw.couleurActuelle));
                 break;
 
 
@@ -246,6 +233,7 @@ public class Window extends JFrame implements ActionListener{
                 break;
             case "Quitter" :
                 System.out.println("I've been clicked !");
+                //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  Fonctionne pas
                 break;
             case "Auteur" :
                 System.out.println("I've been clicked !");
@@ -263,3 +251,13 @@ public class Window extends JFrame implements ActionListener{
     }
 
 }
+
+/* Window contient :
+myDraw : Drawing
+
+Window(String title, int, int)
+
+actionPerformed
+
+main
+ */
