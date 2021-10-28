@@ -1,7 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.io.FileOutputStream;
 
 public class Drawing extends JPanel implements MouseListener, MouseMotionListener {
 
@@ -140,6 +144,42 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
 
     public void mouseMoved(MouseEvent e){} // on ne s'en sert pas
 
+
+    public void save(){
+        try{
+            FileOutputStream fos = new FileOutputStream("sauvegardeDessin");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            oos.writeInt(listFigures.size());
+            for(Figure f : listFigures){
+                oos.writeObject(f);
+            }
+            oos.close();
+        }
+        catch(Exception e){
+            System.out.println("La sauvegarde n'a pas pu être effectuée");
+        }
+
+    }
+
+
+    public void open(){
+        try {
+            FileInputStream fis = new FileInputStream("sauvegardeDessin");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+        }
+        catch(Exception e){
+            System.out.println("Le fichier n'a pas pu être ouvert");
+        }
+
+    }
+
+
+
+
+
+
 }
 
 /* Drawing contient :
@@ -158,4 +198,7 @@ setNomFigureActuelle
 paintComponent
 mousePressed
 mouseDragged
+
+save
+open
  */

@@ -12,7 +12,7 @@ public class Window extends JFrame implements ActionListener{
         super(Title);
         this.setSize(x, y);
         this.setVisible(true);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // création du lieu de stockage des éléments de la fenêtre
         Container contentPanel = this.getContentPane();
@@ -227,9 +227,11 @@ public class Window extends JFrame implements ActionListener{
                 break;
             case "Ouvrir" :
                 System.out.println("I've been clicked !");
+                myDraw.open();
                 break;
             case "Sauvegarder" :
                 System.out.println("I've been clicked !");
+                myDraw.save();
                 break;
             case "Quitter" :
                 System.out.println("I've been clicked !");
