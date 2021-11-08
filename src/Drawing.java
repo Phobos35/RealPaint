@@ -10,6 +10,7 @@ import java.io.FileOutputStream;
 public class Drawing extends JPanel implements MouseListener, MouseMotionListener {
 
     protected ArrayList<Figure> listFigures;
+    protected ArrayList<Figure> listFiguresAnnulation = new ArrayList<Figure>();
     protected Color couleurActuelle;
     protected String nomFigureActuelle;
 
@@ -35,6 +36,7 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
     public void setNomFigureActuelle(String f){
         nomFigureActuelle = f;
     }
+
 
 @Override
     public void paintComponent(Graphics g){
@@ -212,11 +214,16 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
 
     public void annuler(){
         System.out.println("dernier élément effacé");
+        listFiguresAnnulation.add(listFigures.get(listFigures.size() - 1));
         listFigures.remove(listFigures.size() - 1);
-        this.repaint();
+        System.out.println(listFigures.get(listFigures.size()-1).toString());
+        this.repaint(); // probleme car dessine les 2 listes !!
     }
 
-
+    public void refaire(){
+        listFigures.add(listFiguresAnnulation.get(listFiguresAnnulation.size() -1));
+        this.repaint();
+    }
 
 }
 

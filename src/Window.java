@@ -128,6 +128,8 @@ public class Window extends JFrame implements ActionListener{
         autor.addActionListener(this);
         JMenuItem effacer = new JMenuItem( "Annuler");
         effacer.addActionListener(this);
+        JMenuItem refaire = new JMenuItem( "Refaire");
+        refaire.addActionListener(this);
         // On les ajoute à l'onglet que l'on souhaite
         fichier.add(news);
         fichier.add(save);
@@ -135,6 +137,7 @@ public class Window extends JFrame implements ActionListener{
         fichier.add(quit);
         aPropos.add(autor);
         annuler.add(effacer);
+        annuler.add(refaire);
 
         // On ajoute les onglets à la barre de menu
         menuBar.add(fichier);
@@ -252,6 +255,9 @@ public class Window extends JFrame implements ActionListener{
             case "Annuler" :
                 System.out.println("I've been clicked !");
                 myDraw.annuler();
+            case "Refaire" :
+                System.out.println("I've been clicked !");
+                myDraw.refaire();
 
         }
     }
