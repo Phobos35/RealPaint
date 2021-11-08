@@ -114,6 +114,7 @@ public class Window extends JFrame implements ActionListener{
         // On crée les onglets de la barre de menu
         JMenu fichier = new JMenu("Fichier");
         JMenu aPropos = new JMenu("A Propos");
+        JMenu annuler = new JMenu("Annuler");
         // On crée les propositions apparaîssant en déroulant les onglets (et on les rend cliquable)
         JMenuItem news = new JMenuItem("Nouveau");
         news.addActionListener(this);
@@ -125,16 +126,20 @@ public class Window extends JFrame implements ActionListener{
         quit.addActionListener(this);
         JMenuItem autor = new JMenuItem("Auteur");
         autor.addActionListener(this);
+        JMenuItem effacer = new JMenuItem( "Annuler");
+        effacer.addActionListener(this);
         // On les ajoute à l'onglet que l'on souhaite
         fichier.add(news);
         fichier.add(save);
         fichier.add(open);
         fichier.add(quit);
         aPropos.add(autor);
+        annuler.add(effacer);
 
         // On ajoute les onglets à la barre de menu
         menuBar.add(fichier);
         menuBar.add(aPropos);
+        menuBar.add(annuler);
         // On ajoute la barre de menu
         setJMenuBar(menuBar);
 
@@ -224,6 +229,7 @@ public class Window extends JFrame implements ActionListener{
 
             case "Nouveau" :
                 System.out.println("I've been clicked !");
+                myDraw.nouveau();
                 break;
             case "Ouvrir" :
                 System.out.println("I've been clicked !");
@@ -235,7 +241,7 @@ public class Window extends JFrame implements ActionListener{
                 break;
             case "Quitter" :
                 System.out.println("I've been clicked !");
-                //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  Fonctionne pas
+                this.dispose();
                 break;
             case "Auteur" :
                 System.out.println("I've been clicked !");
@@ -243,6 +249,9 @@ public class Window extends JFrame implements ActionListener{
                 info.showInternalMessageDialog( info, "Auteur : Margot",
                         "information",JOptionPane.INFORMATION_MESSAGE);
                 break;
+            case "Annuler" :
+                System.out.println("I've been clicked !");
+                myDraw.annuler();
 
         }
     }

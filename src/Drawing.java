@@ -147,17 +147,31 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
 
     public void save(){
         try{
+            System.out.println("sauvegarde activée");
+
+            //Pour choisir le nom et l'emplacement du fichier
+            /*//Crée un JFileChooser
+            //final JFileChooser fc = new JFileChooser();
+            //En réponse à un click: demande un Component en entrée
+            //int returnVal = fc.showOpenDialog();
+            */
+
+            //Crée un fichier
             FileOutputStream fos = new FileOutputStream("sauvegardeDessin");
+            //Permet d'écrire dans le fichier
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
+            //O sauvegarde la taille de la figure
             oos.writeInt(listFigures.size());
+            //On enregistre chaque figure de la liste en court une à une
             for(Figure f : listFigures){
                 oos.writeObject(f);
             }
             oos.close();
         }
         catch(Exception e){
-            System.out.println("La sauvegarde n'a pas pu être effectuée");
+            System.out.println(e.getMessage());
+            System.out.println("la sauvegarde a échouée");
         }
 
     }
@@ -168,6 +182,21 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
             FileInputStream fis = new FileInputStream("sauvegardeDessin");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
+            //vider ma liste en court
+            listFigures.clear();
+
+            //ajouter à la liste courante les éléments de la sauvegarde
+            int taille = ois.readInt(); //la taille de la liste sauvegardée était le premier élément sauvegardé dans le fichier
+            for(int i=0 ; i<taille ; i++) {
+                listFigures.add((Figure) ois.readObject()); // (Figure) déclare le type Object renvoyé par readObject comme un type Figure
+            }
+
+            //On dessine les éléments de la liste courante, provenant du fichier de sauvegarde
+            this.repaint();
+
+            //ferme le fichier ois une fois qu'on a récupéré ses informations dans la liste courante
+            ois.close();
+
         }
         catch(Exception e){
             System.out.println("Le fichier n'a pas pu être ouvert");
@@ -176,7 +205,16 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
     }
 
 
+    public void nouveau(){
+        listFigures.clear();
+        this.repaint();
+    }
 
+    public void annuler(){
+        System.out.println("dernier élément effacé");
+        listFigures.remove(listFigures.size() - 1);
+        this.repaint();
+    }
 
 
 
@@ -201,4 +239,6 @@ mouseDragged
 
 save
 open
+nouveau
+annuler
  */

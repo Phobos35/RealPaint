@@ -1,6 +1,7 @@
 import java.awt.*;
+import java.io.Serializable;
 
-abstract class Figure {
+abstract class Figure implements Serializable {
 
     protected Point origine;
     protected Color couleur;
