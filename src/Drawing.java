@@ -1,3 +1,4 @@
+// Margot Laleu
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -7,12 +8,14 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.io.FileOutputStream;
 
+
 public class Drawing extends JPanel implements MouseListener, MouseMotionListener {
 
     protected ArrayList<Figure> listFigures;
     protected ArrayList<Figure> listFiguresAnnulation = new ArrayList<Figure>();
     protected Color couleurActuelle;
     protected String nomFigureActuelle;
+
 
     protected int x;
     protected int y;
@@ -41,7 +44,6 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
 @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        //g.fillOval(200, 200, 100, 100);
         for(Figure f : listFigures){
             f.draw(g);
         }
@@ -146,6 +148,7 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
 
     public void mouseMoved(MouseEvent e){} // on ne s'en sert pas
 
+    // Les fonctions associées à mes boutons
 
     public void save(){
         try{
@@ -212,16 +215,19 @@ public class Drawing extends JPanel implements MouseListener, MouseMotionListene
         this.repaint();
     }
 
+
+
     public void annuler(){
-        System.out.println("dernier élément effacé");
         listFiguresAnnulation.add(listFigures.get(listFigures.size() - 1));
         listFigures.remove(listFigures.size() - 1);
-        System.out.println(listFigures.get(listFigures.size()-1).toString());
-        this.repaint(); // probleme car dessine les 2 listes !!
+        System.out.println("dernier élément effacé");
+        this.repaint();
     }
 
-    public void refaire(){
+
+    public void redraw(){
         listFigures.add(listFiguresAnnulation.get(listFiguresAnnulation.size() -1));
+        listFiguresAnnulation.remove(listFiguresAnnulation.size()-1);
         this.repaint();
     }
 
@@ -248,4 +254,5 @@ save
 open
 nouveau
 annuler
+redraw
  */

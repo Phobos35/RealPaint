@@ -1,3 +1,4 @@
+// Margot Laleu
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -163,7 +164,7 @@ public class Window extends JFrame implements ActionListener{
 
 
 
-// Indique ce qui doit se passer quand on clique sur tel ou tel bouton
+// Indique ce qui doit se passer quand on clique sur tel ou tel bouton, appelé lorsqu'un clique est effectué
 
     @Override
 
@@ -231,33 +232,35 @@ public class Window extends JFrame implements ActionListener{
 
 
             case "Nouveau" :
-                System.out.println("I've been clicked !");
+                System.out.println("Nouveau fichier créé");
                 myDraw.nouveau();
                 break;
             case "Ouvrir" :
-                System.out.println("I've been clicked !");
+                System.out.println("Le dernier fichier sauvegardé est ouvert");
                 myDraw.open();
                 break;
             case "Sauvegarder" :
-                System.out.println("I've been clicked !");
+                System.out.println("Sauvegarde demandée");
                 myDraw.save();
                 break;
             case "Quitter" :
-                System.out.println("I've been clicked !");
+                System.out.println("quitté");
                 this.dispose();
                 break;
             case "Auteur" :
-                System.out.println("I've been clicked !");
+                System.out.println("auteur");
                 JOptionPane info = new JOptionPane();
                 info.showInternalMessageDialog( info, "Auteur : Margot",
                         "information",JOptionPane.INFORMATION_MESSAGE);
                 break;
             case "Annuler" :
-                System.out.println("I've been clicked !");
+                System.out.println("demande d'annulation de la dernière figure");
                 myDraw.annuler();
+                break;
             case "Refaire" :
-                System.out.println("I've been clicked !");
-                myDraw.refaire();
+                System.out.println("Redessiner la dernière figure effacée");
+                myDraw.redraw();
+                break;
 
         }
     }

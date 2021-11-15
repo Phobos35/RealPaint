@@ -1,3 +1,4 @@
+// Margot Laleu
 import java.awt.*;
 
 public class Ellipse extends Figure{
@@ -52,7 +53,7 @@ public class Ellipse extends Figure{
 
     @Override
     public String toString(){
-        return "Cette Ellipse a pour demi-axe selon x "+ semiAxysX +"et pour semi-axe selon y"+ semiAxysY;
+        return "Cette Ellipse a pour demi-axe selon x "+ semiAxysX +" et pour demi-axe selon y"+ semiAxysY;
     }
 
 }

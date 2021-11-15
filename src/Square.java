@@ -1,3 +1,4 @@
+// Margot Laleu
 import java.awt.*;
 
 
@@ -25,7 +26,7 @@ public class Square extends Rectangle {
 
     @Override
     public String toString(){
-        return "Ce carré est de coté "+ length +"et est de couleur" + couleur;
+        return "Ce carré est de coté "+ length +" et est de couleur" + couleur;
     }
 
 }

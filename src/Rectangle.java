@@ -1,3 +1,4 @@
+// Margot Laleu
 import java.awt.*;
 
 public class Rectangle extends Figure {
@@ -51,7 +52,7 @@ public class Rectangle extends Figure {
 
     @Override
     public String toString(){
-        return "Ce rectangle a une largeur de " + width+ "et une largeur de "+ length;
+        return "Ce rectangle a une largeur de " + width+ " et une largeur de "+ length;
     }
 
 }

@@ -1,3 +1,4 @@
+// Margot Laleu
 import java.awt.*;
 
 public class Circle extends Ellipse {
@@ -26,7 +27,7 @@ public class Circle extends Ellipse {
 
     @Override
     public String toString(){
-        return "Ce cercle est de rayon "+ semiAxysX +"et est de couleur" + couleur;
+        return "Ce cercle est de rayon "+ semiAxysX +" et est de couleur" + couleur;
     }
 
 }
